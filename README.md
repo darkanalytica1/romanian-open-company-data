@@ -4,9 +4,9 @@
 
 <p align="center">
   <a href="https://github.com/darkanalytica1/romanian-open-company-data/actions/workflows/tests.yml"><img src="https://github.com/darkanalytica1/romanian-open-company-data/actions/workflows/tests.yml/badge.svg" alt="tests"></a>
-  <img src="https://img.shields.io/badge/python-3.11%2B-1F3A5F" alt="Python 3.11+">
-  <img src="https://img.shields.io/badge/dependencies-none-5B7083" alt="No runtime dependencies">
-  <img src="https://img.shields.io/badge/license-MIT-5B7083" alt="MIT licence">
+  <img src="https://img.shields.io/badge/python-3.11%2B-0B2545" alt="Python 3.11+">
+  <img src="https://img.shields.io/badge/dependencies-none-3E5C76" alt="No runtime dependencies">
+  <img src="https://img.shields.io/badge/license-MIT-3E5C76" alt="MIT licence">
 </p>
 
 # Romanian Open Company Data

@@ -2,7 +2,7 @@
   <title id="t">From a messy list to a confirmed record</title>
   <desc id="d">Messy identifiers are normalised to digits, filtered by the checksum locally, joined on a normalised name key, then confirmed against VIES or EORI. The answer has three states: valid, invalid, and unknown when the service fails; a service error is never recorded as invalid.</desc>
   <style>
-    .serif { font-family: 'Source Serif 4', 'Source Serif Pro', Georgia, 'Times New Roman', serif; }
+    .display { font-family: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; letter-spacing: -0.01em; }
     .sans  { font-family: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; }
     .mono  { font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
     .flow  { stroke-dasharray: 6 6; animation: flow 3s linear infinite; }
@@ -11,75 +11,75 @@
     @keyframes pulse { 0%, 100% { opacity: .6 } 50% { opacity: 1 } }
     @media (prefers-reduced-motion: reduce) { * { animation: none !important } }
   </style>
-  <rect width="1200" height="520" fill="#F6F4EF"/>
-  <text x="48" y="52" class="mono" font-size="12" letter-spacing="1.2" fill="#7A8088">FIG. 2  ·  CLEAN CHEAPLY, THEN CONFIRM AGAINST AN OFFICIAL SOURCE</text>
-  <text x="48" y="94" class="serif" font-size="26" font-weight="600" fill="#1B1F24">Three answers, not two: a service error is not a negative</text>
+  <rect width="1200" height="520" fill="#F5F7FA"/>
+  <text x="48" y="52" class="mono" font-size="12" letter-spacing="1.2" fill="#6B7688">FIG. 2  ·  CLEAN CHEAPLY, THEN CONFIRM AGAINST AN OFFICIAL SOURCE</text>
+  <text x="48" y="94" class="display" font-size="26" font-weight="600" fill="#0E1726">Three answers, not two: a service error is not a negative</text>
 
-  <path class="flow" d="M248,205 L968,205" fill="none" stroke="#5B7083" stroke-width="1.75"/>
-  <path class="flow" d="M1060,260 V300 H224 V340" fill="none" stroke="#5B7083" stroke-width="1.75"/>
-  <path d="M600,300 V340" fill="none" stroke="#5B7083" stroke-width="1.75" stroke-dasharray="6 6"/>
-  <path class="flow" d="M1060,260 V300 H976 V340" fill="none" stroke="#A33A2B" stroke-width="2"/>
-  <circle r="6" fill="#1F3A5F" stroke="#fff" stroke-width="1.5">
+  <path class="flow" d="M248,205 L968,205" fill="none" stroke="#3E5C76" stroke-width="1.75"/>
+  <path class="flow" d="M1060,260 V300 H224 V340" fill="none" stroke="#3E5C76" stroke-width="1.75"/>
+  <path d="M600,300 V340" fill="none" stroke="#3E5C76" stroke-width="1.75" stroke-dasharray="6 6"/>
+  <path class="flow" d="M1060,260 V300 H976 V340" fill="none" stroke="#8A6A1F" stroke-width="2"/>
+  <circle r="6" fill="#0B2545" stroke="#fff" stroke-width="1.5">
     <animateMotion dur="7s" repeatCount="indefinite" path="M248,205 L968,205"/>
   </circle>
-  <circle r="6" fill="#A33A2B" stroke="#fff" stroke-width="1.5">
+  <circle r="6" fill="#8A6A1F" stroke="#fff" stroke-width="1.5">
     <animateMotion dur="7s" repeatCount="indefinite" path="M1060,260 V300 H976 V340"/>
   </circle>
 
   <!-- input -->
-  <rect x="48" y="150" width="200" height="110" rx="4" fill="#fff" stroke="#DAD6CC" stroke-width="1.5"/>
-  <text x="64" y="180" class="mono" font-size="12" letter-spacing="1" fill="#7A8088">MESSY INPUT</text>
-  <text x="64" y="228" class="mono" font-size="13" fill="#1B1F24">RO 4382 5150</text>
-  <text x="64" y="246" class="mono" font-size="13" fill="#1B1F24">43825150.0</text>
+  <rect x="48" y="150" width="200" height="110" rx="4" fill="#fff" stroke="#D8DEE6" stroke-width="1.5"/>
+  <text x="64" y="180" class="mono" font-size="12" letter-spacing="1" fill="#6B7688">MESSY INPUT</text>
+  <text x="64" y="228" class="mono" font-size="13" fill="#0E1726">RO 4382 5150</text>
+  <text x="64" y="246" class="mono" font-size="13" fill="#0E1726">43825150.0</text>
 
   <g>
-    <rect x="278" y="150" width="200" height="110" rx="4" fill="#fff" stroke="#1F3A5F" stroke-width="1.5"/>
-    <rect x="278" y="150" width="200" height="3" fill="#1F3A5F"/>
-    <text x="294" y="180" class="mono" font-size="12" letter-spacing="1" fill="#1F3A5F">01  DIGITS</text>
-    <text x="294" y="232" class="sans" font-size="15" fill="#1B1F24">strip prefixes, spaces,</text>
-    <text x="294" y="250" class="sans" font-size="15" fill="#1B1F24">spreadsheet ".0"</text>
+    <rect x="278" y="150" width="200" height="110" rx="4" fill="#fff" stroke="#0B2545" stroke-width="1.5"/>
+    <rect x="278" y="150" width="200" height="3" fill="#0B2545"/>
+    <text x="294" y="180" class="mono" font-size="12" letter-spacing="1" fill="#0B2545">01  DIGITS</text>
+    <text x="294" y="232" class="sans" font-size="15" fill="#0E1726">strip prefixes, spaces,</text>
+    <text x="294" y="250" class="sans" font-size="15" fill="#0E1726">spreadsheet ".0"</text>
   </g>
   <g>
-    <rect x="508" y="150" width="200" height="110" rx="4" fill="#fff" stroke="#1F3A5F" stroke-width="1.5"/>
-    <rect x="508" y="150" width="200" height="3" fill="#1F3A5F"/>
-    <text x="524" y="180" class="mono" font-size="12" letter-spacing="1" fill="#1F3A5F">02  CHECKSUM</text>
-    <text x="524" y="232" class="sans" font-size="15" fill="#1B1F24">local, free, no network;</text>
-    <text x="524" y="250" class="sans" font-size="15" fill="#1B1F24">drops ~9 in 10 of rubbish</text>
+    <rect x="508" y="150" width="200" height="110" rx="4" fill="#fff" stroke="#0B2545" stroke-width="1.5"/>
+    <rect x="508" y="150" width="200" height="3" fill="#0B2545"/>
+    <text x="524" y="180" class="mono" font-size="12" letter-spacing="1" fill="#0B2545">02  CHECKSUM</text>
+    <text x="524" y="232" class="sans" font-size="15" fill="#0E1726">local, free, no network;</text>
+    <text x="524" y="250" class="sans" font-size="15" fill="#0E1726">drops ~9 in 10 of rubbish</text>
   </g>
   <g>
-    <rect x="738" y="150" width="200" height="110" rx="4" fill="#fff" stroke="#1F3A5F" stroke-width="1.5"/>
-    <rect x="738" y="150" width="200" height="3" fill="#1F3A5F"/>
-    <text x="754" y="180" class="mono" font-size="12" letter-spacing="1" fill="#1F3A5F">03  NAME KEY</text>
-    <text x="754" y="232" class="sans" font-size="15" fill="#1B1F24">fold both diacritic sets,</text>
-    <text x="754" y="250" class="sans" font-size="15" fill="#1B1F24">split off the legal form</text>
+    <rect x="738" y="150" width="200" height="110" rx="4" fill="#fff" stroke="#0B2545" stroke-width="1.5"/>
+    <rect x="738" y="150" width="200" height="3" fill="#0B2545"/>
+    <text x="754" y="180" class="mono" font-size="12" letter-spacing="1" fill="#0B2545">03  NAME KEY</text>
+    <text x="754" y="232" class="sans" font-size="15" fill="#0E1726">fold both diacritic sets,</text>
+    <text x="754" y="250" class="sans" font-size="15" fill="#0E1726">split off the legal form</text>
   </g>
   <g>
-    <rect x="968" y="150" width="184" height="110" rx="4" fill="#fff" stroke="#1F3A5F" stroke-width="1.5"/>
-    <rect x="968" y="150" width="184" height="3" fill="#1F3A5F"/>
-    <text x="984" y="180" class="mono" font-size="12" letter-spacing="1" fill="#1F3A5F">04  CONFIRM</text>
-    <text x="984" y="232" class="sans" font-size="15" fill="#1B1F24">VIES or EORI,</text>
-    <text x="984" y="250" class="sans" font-size="15" fill="#1B1F24">rate limited, backoff</text>
+    <rect x="968" y="150" width="184" height="110" rx="4" fill="#fff" stroke="#0B2545" stroke-width="1.5"/>
+    <rect x="968" y="150" width="184" height="3" fill="#0B2545"/>
+    <text x="984" y="180" class="mono" font-size="12" letter-spacing="1" fill="#0B2545">04  CONFIRM</text>
+    <text x="984" y="232" class="sans" font-size="15" fill="#0E1726">VIES or EORI,</text>
+    <text x="984" y="250" class="sans" font-size="15" fill="#0E1726">rate limited, backoff</text>
   </g>
 
-  <line x1="608" y1="260" x2="608" y2="282" stroke="#DAD6CC" stroke-width="1.5"/>
-  <text x="618" y="280" class="mono" font-size="12" fill="#7A8088">fail: rejected locally</text>
+  <line x1="608" y1="260" x2="608" y2="282" stroke="#D8DEE6" stroke-width="1.5"/>
+  <text x="618" y="280" class="mono" font-size="12" fill="#6B7688">fail: rejected locally</text>
 
   <!-- outcomes -->
-  <rect x="48" y="340" width="352" height="110" rx="4" fill="#EAF0EB" stroke="#5E7F68" stroke-width="1.5"/>
-  <text x="68" y="370" class="mono" font-size="12" letter-spacing="1" fill="#5E7F68">VALID</text>
-  <text x="68" y="402" class="sans" font-size="15" fill="#1B1F24">registered right now; act on it and</text>
-  <text x="68" y="422" class="sans" font-size="15" fill="#1B1F24">store checked_at and source_url</text>
+  <rect x="48" y="340" width="352" height="110" rx="4" fill="#E9F2F2" stroke="#2F6F73" stroke-width="1.5"/>
+  <text x="68" y="370" class="mono" font-size="12" letter-spacing="1" fill="#2F6F73">VALID</text>
+  <text x="68" y="402" class="sans" font-size="15" fill="#0E1726">registered right now; act on it and</text>
+  <text x="68" y="422" class="sans" font-size="15" fill="#0E1726">store checked_at and source_url</text>
 
-  <rect x="424" y="340" width="352" height="110" rx="4" fill="#fff" stroke="#5B7083" stroke-width="1.5"/>
-  <text x="444" y="370" class="mono" font-size="12" letter-spacing="1" fill="#4A5058">INVALID</text>
-  <text x="444" y="402" class="sans" font-size="15" fill="#1B1F24">not VAT or customs registered, which</text>
-  <text x="444" y="422" class="sans" font-size="15" fill="#1B1F24">is not the same as "not a company"</text>
+  <rect x="424" y="340" width="352" height="110" rx="4" fill="#fff" stroke="#3E5C76" stroke-width="1.5"/>
+  <text x="444" y="370" class="mono" font-size="12" letter-spacing="1" fill="#3D4A5C">INVALID</text>
+  <text x="444" y="402" class="sans" font-size="15" fill="#0E1726">not VAT or customs registered, which</text>
+  <text x="444" y="422" class="sans" font-size="15" fill="#0E1726">is not the same as "not a company"</text>
 
-  <g class="unknown"><rect x="800" y="340" width="352" height="110" rx="4" fill="#F6E9E6" stroke="#A33A2B" stroke-width="2"/></g>
-  <text x="820" y="370" class="mono" font-size="12" letter-spacing="1" fill="#A33A2B">UNKNOWN</text>
-  <text x="820" y="402" class="sans" font-size="15" fill="#1B1F24">timeout, 429 or 5xx: keep as unknown,</text>
-  <text x="820" y="422" class="sans" font-size="15" fill="#1B1F24">retry later, never record as invalid</text>
+  <g class="unknown"><rect x="800" y="340" width="352" height="110" rx="4" fill="#F4EFE2" stroke="#8A6A1F" stroke-width="2"/></g>
+  <text x="820" y="370" class="mono" font-size="12" letter-spacing="1" fill="#8A6A1F">UNKNOWN</text>
+  <text x="820" y="402" class="sans" font-size="15" fill="#0E1726">timeout, 429 or 5xx: keep as unknown,</text>
+  <text x="820" y="422" class="sans" font-size="15" fill="#0E1726">retry later, never record as invalid</text>
 
-  <text x="48" y="490" class="mono" font-size="12" fill="#7A8088">Only a clear response from the service moves a record out of unknown. Cache results; re-validate on a TTL.</text>
+  <text x="48" y="490" class="mono" font-size="12" fill="#6B7688">Only a clear response from the service moves a record out of unknown. Cache results; re-validate on a TTL.</text>
 
 </svg>
