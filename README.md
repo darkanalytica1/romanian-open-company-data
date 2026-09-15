@@ -40,17 +40,9 @@ Two Romanian datasets rarely join cleanly. This is the pipeline the library is
 built for: throw away rubbish cheaply, normalise the survivors, then confirm
 against an official source before trusting anything.
 
-```mermaid
-flowchart LR
-    A[Messy input<br/>spreadsheet, export, list] --> B{Valid CUI?<br/>checksum, local}
-    B -->|no| X[Discard cheaply]
-    B -->|yes| C[Normalise the name<br/>fold diacritics, strip legal form]
-    C --> D[Match / dedupe<br/>same company, one key]
-    D --> E{Confirm existence}
-    E -->|VIES / EORI, rate-limited| F[Trusted record<br/>+ source URL + timestamp]
-    style F fill:#1f9d55,color:#fff
-    style X fill:#c0392b,color:#fff
-```
+<p align="center">
+  <img src="assets/join-pipeline.gif" alt="Clean cheaply, then confirm against an official source" width="900">
+</p>
 
 The green box is the only state you should act on. The checksum filter is fast
 but not proof, so nothing is trusted until an official source confirms it.
