@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" width="1200" height="480" role="img" aria-labelledby="t d">
+  <title id="t">How the CUI check digit is computed</title>
+  <desc id="d">Strip to digits and pad the body to nine; multiply each digit by the control key 753217532; sum, multiply by ten, take modulo eleven, and map ten to zero; compare with the last digit. Worked example: 43825150 passes.</desc>
+  <style>
+    .serif { font-family: 'Source Serif 4', 'Source Serif Pro', Georgia, 'Times New Roman', serif; }
+    .sans  { font-family: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif; }
+    .mono  { font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .flow  { stroke-dasharray: 6 6; animation: flow 3s linear infinite; }
+    .key   { animation: pulse 6s ease-in-out infinite; }
+    @keyframes flow { to { stroke-dashoffset: -48 } }
+    @keyframes pulse { 0%, 100% { opacity: .6 } 50% { opacity: 1 } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important } }
+  </style>
+  <rect width="1200" height="480" fill="#F6F4EF"/>
+  <text x="48" y="52" class="mono" font-size="12" letter-spacing="1.2" fill="#7A8088">FIG. 1  ·  CUI CHECK DIGIT (rocompany.cui.check_digit)</text>
+  <text x="48" y="94" class="serif" font-size="26" font-weight="600" fill="#1B1F24">The last digit is computed from the others</text>
+
+  <path class="flow" d="M298,210 L1138,210" fill="none" stroke="#5B7083" stroke-width="1.75"/>
+  <circle r="6" fill="#1F3A5F" stroke="#fff" stroke-width="1.5">
+    <animateMotion dur="6s" repeatCount="indefinite" path="M298,210 L1138,210"/>
+  </circle>
+
+  <g>
+    <rect x="48" y="150" width="250" height="120" rx="4" fill="#fff" stroke="#1F3A5F" stroke-width="1.5"/>
+    <rect x="48" y="150" width="250" height="3" fill="#1F3A5F"/>
+    <text x="68" y="182" class="mono" font-size="12" letter-spacing="1" fill="#1F3A5F">01  NORMALISE</text>
+    <text x="68" y="238" class="sans" font-size="15" fill="#1B1F24">strip non-digits, split off</text>
+    <text x="68" y="256" class="sans" font-size="15" fill="#1B1F24">last digit, pad body to 9</text>
+  </g>
+  <g>
+    <rect x="328" y="150" width="250" height="120" rx="4" fill="#fff" stroke="#1F3A5F" stroke-width="1.5"/>
+    <rect x="328" y="150" width="250" height="3" fill="#1F3A5F"/>
+    <text x="348" y="182" class="mono" font-size="12" letter-spacing="1" fill="#1F3A5F">02  WEIGHT</text>
+    <text x="348" y="238" class="sans" font-size="15" fill="#1B1F24">each digit × control key</text>
+    <text x="348" y="256" class="mono" font-size="14" fill="#1F3A5F">7 5 3 2 1 7 5 3 2</text>
+  </g>
+  <g>
+    <rect x="608" y="150" width="250" height="120" rx="4" fill="#fff" stroke="#1F3A5F" stroke-width="1.5"/>
+    <rect x="608" y="150" width="250" height="3" fill="#1F3A5F"/>
+    <text x="628" y="182" class="mono" font-size="12" letter-spacing="1" fill="#1F3A5F">03  REDUCE</text>
+    <text x="628" y="238" class="mono" font-size="14" fill="#1B1F24">(Σ × 10) mod 11</text>
+    <text x="628" y="256" class="sans" font-size="15" fill="#1B1F24">a remainder of 10 becomes 0</text>
+  </g>
+  <g>
+    <rect x="888" y="150" width="250" height="120" rx="4" fill="#fff" stroke="#1F3A5F" stroke-width="1.5"/>
+    <rect x="888" y="150" width="250" height="3" fill="#1F3A5F"/>
+    <text x="908" y="182" class="mono" font-size="12" letter-spacing="1" fill="#1F3A5F">04  COMPARE</text>
+    <text x="908" y="238" class="sans" font-size="15" fill="#1B1F24">equal to the last digit?</text>
+    <text x="908" y="256" class="sans" font-size="15" fill="#1B1F24">length 2 to 10, not all zero</text>
+  </g>
+
+  <!-- worked example -->
+  <text x="48" y="318" class="mono" font-size="12" letter-spacing="1" fill="#7A8088">WORKED EXAMPLE</text>
+  <line x1="48" y1="330" x2="1138" y2="330" stroke="#DAD6CC"/>
+  <g class="mono" font-size="14" fill="#1B1F24">
+    <text x="68" y="360">"RO 4382 5150"</text>
+    <text x="68" y="384">→ 004382515 | 0</text>
+    <text x="348" y="360">0 0 12 6 8 14 25 3 10</text>
+    <text x="348" y="384">Σ = 78</text>
+    <text x="628" y="360">78 × 10 = 780</text>
+    <text x="628" y="384">780 mod 11 = 10 → 0</text>
+    <text x="908" y="360">0 = 0</text>
+    <text x="908" y="384" fill="#5E7F68">structurally valid</text>
+  </g>
+
+  <!-- caveat -->
+  <g class="key">
+    <rect x="48" y="414" width="1090" height="44" rx="4" fill="#F6EFDF" stroke="#B8872B" stroke-width="1.5"/>
+  </g>
+  <text x="68" y="441" class="sans" font-size="15" fill="#1B1F24">A filter, not proof: about one arbitrary number in ten passes by chance. The postcode 010101 validates and is not a company.</text>
+
+</svg>

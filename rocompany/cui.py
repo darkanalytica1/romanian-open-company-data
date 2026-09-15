@@ -4,13 +4,13 @@ Every company registered in Romania has a CUI (Cod Unic de Inregistrare), also
 written CIF when the company is registered for VAT. It is the primary key you
 will join on when working with any Romanian public register.
 
-The code carries a check digit, so roughly 10 out of 11 random numbers can be
+The code carries a check digit, so roughly 9 out of 10 random numbers can be
 rejected without touching the network. Validating locally before you query an
 API is the difference between a pipeline that finishes and one that spends its
 day being rate limited.
 
 Know the limit of that check. Passing the checksum is necessary, not
-sufficient: about one arbitrary number in eleven passes by coincidence, and
+sufficient: about one arbitrary number in ten passes by coincidence, and
 the Romanian postcode 010101 is a real example of a value that validates
 cleanly and is not a company. Use this module to throw away obvious rubbish
 cheaply, then confirm the survivors against an actual register.

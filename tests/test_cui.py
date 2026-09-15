@@ -51,7 +51,7 @@ def test_filter_valid_drops_junk():
 def test_checksum_is_necessary_but_not_sufficient():
     """A short number can satisfy the checksum by coincidence.
 
-    Roughly one in eleven arbitrary numbers passes. The Romanian postcode
+    Roughly one in ten arbitrary numbers passes. The Romanian postcode
     010101 is a real example. Local validation is a cheap filter that removes
     most rubbish before you spend a network call, never a proof that the
     company exists. Confirm existence against a register.

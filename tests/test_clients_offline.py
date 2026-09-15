@@ -18,7 +18,7 @@ def test_build_eori():
 def test_vies_placeholder_values_become_none():
     assert _clean("---") is None
     assert _clean("  ") is None
-    assert _clean(" WEBHUNT  S.R.L. ") == "WEBHUNT S.R.L."
+    assert _clean(" ALFA  COM S.R.L. ") == "ALFA COM S.R.L."
 
 
 def test_eori_response_shape_is_parseable():

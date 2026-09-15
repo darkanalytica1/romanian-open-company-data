@@ -42,7 +42,7 @@ how to treat it at analysis time, per question.
 
 ## 4. The checksum that passes by accident
 
-The CUI check digit rejects about ten of every eleven arbitrary numbers,
+The CUI check digit rejects about nine of every ten arbitrary numbers,
 which makes it an excellent cheap filter. It is not proof of existence. The
 postcode `010101` validates. So do plenty of order references and short
 account numbers.
